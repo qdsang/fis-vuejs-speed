@@ -38,6 +38,7 @@
 ## 安装本地server
 
 * 进入 server目录 直接 npm install 命令即可安装成功
+* 直接在server目录中，npm start 即可开启server
 * 浏览器中访问 http://127.0.0.1:3000 即可看到效果
 * 由于是工程项目，没有搭建直接可以预览的demo页面，没有意义。你值得去动手
 
