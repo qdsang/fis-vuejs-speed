@@ -1,0 +1,11 @@
+
+div(v-component="c-header")
+
+.tips_view.mitu_02
+    .tips_msg
+        h3(v-text="tip_text") 
+    .tips_btn
+        a.button.disable_button(v-if="btn_type=='refresh' || btn_type==''", href="javascript:Mipu.doRefresh();") 刷新
+        a.button.disable_button(v-if="btn_type=='gohome'", href="/") 回到首页
+
+div(v-component="c-footer")

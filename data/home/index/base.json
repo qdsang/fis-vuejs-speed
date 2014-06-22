@@ -1,0 +1,21 @@
+{
+    'data': {
+        nav: [{
+            "name": "test1",
+            "icon": "quanbushangpin",
+            "link": "#"
+        }, {
+            "name": "test2",
+            "icon": "sousuo",
+            "link": "#/search"
+        }, {
+            "name": "4",
+            "icon": "tehui",
+            "link": "#"
+        }, {
+            "name": "ert",
+            "icon": "diannaoban",
+            "link": "#"
+        }]
+    }
+}

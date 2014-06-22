@@ -1,0 +1,25 @@
+@import "compass/utilities"
+@import "compass/css3"
+
+.tips_view
+    text-align: center
+    background-color: #f4f4f4
+    .tips_msg
+        padding: (100em/20) 0 (40em/20)
+        &:before
+            content: '\0020'
+            display: block
+            margin: 0 auto 
+        h3
+            font-size: (34em/20)
+            color: #50555B
+            margin-bottom: (15em/34)
+    &.mitu_02
+        .tips_msg
+            &:before
+                width: (320em/20)
+                height: (322em/20)
+    .tips_btn
+        width: (340em/20)
+        margin: 0 auto
+        padding: (30em/20) 0 (60em/20)

@@ -1,0 +1,69 @@
+@import "compass/utilities"
+@import "compass/css3"
+
+.header
+    position: relative
+    background-color: #f4f4f4
+    .tit
+        text-align: center
+        height: (100em/20)
+        h2
+            padding: (24em/20) 0 0
+        span
+            font-size: (40em/20)
+            color: #464646
+            font-weight: 300
+
+    .left
+        position: absolute
+        top: 0
+        left: 0
+        .home
+            display: inline-block
+            padding: (16em/20) (30em/20)
+            span
+                padding: (8em/40) 0
+                display: inline-block
+                font-size: (40em/20)
+                color: #464646
+            .icon-home
+                padding: 0
+                font-size: (56em/20)
+    .right
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0 (20em/20) 0 0
+        li
+            float: left
+            a
+                display: block
+                padding: (20em/20) (10em/20) (20em/20) (14em/20)
+                position: relative
+            .ico
+                display: inline-block
+                width: (60em/20)
+                height: (60em/20)
+        //.search
+        //    .ico
+        //        background: url(./img/ico_search.png) no-repeat 0 0
+        //        +background-size((60em/20) (60em/20))
+        .user
+            .icon-gerenzhongxin
+                font-size: (52em/20)
+                color: #666
+        .cart
+            .icon-gouwuche
+                font-size: (52em/20)
+                color: #666
+            .tip
+                position: absolute
+                top: (16em/20)
+                right: 0
+                width: (30em/20)
+                height: (28em/20)
+                padding-top: (2em/20)
+                text-align: center
+                background-color: #ffc703
+                color: #783600
+                +border-radius((6em/20))

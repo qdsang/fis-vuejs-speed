@@ -1,0 +1,35 @@
+
+@mixin media($min-width, $max-width)
+    @media only screen and (max-width:$max-width*1px) and (min-width:$min-width*1px)
+        body
+            font-size: (20px/(720/$min-width))
+        .viewport
+            max-width: $max-width*1px
+
+
+@media only screen and (max-width:300px)
+    body
+        font-size: (20px/(720/300))
+    .viewport
+        max-width: 300px
+
+@include media(300, 310)
+@include media(310, 320)
+@include media(320, 350)
+@include media(350, 360)
+@include media(360, 400)
+@include media(400, 470)
+@include media(470, 480)
+@include media(480, 540)
+@include media(540, 560)
+@include media(560, 570)
+@include media(570, 630)
+@include media(630, 640)
+@include media(640, 710)
+@include media(710, 720)
+
+@media only screen and (min-width:720px)
+    body
+        font-size: (20px/(720/720))
+    .viewport
+        width: 720px

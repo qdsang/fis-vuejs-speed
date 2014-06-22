@@ -1,0 +1,111 @@
+@import "compass/utilities"
+@import "compass/css3"
+
+@import "_reset"
+@import "_media"
+@import "fonts.sass"
+
+body
+    background-color: #f4f4f4
+
+.global-loading
+    text-align: center
+    .global-loading-logo
+        position: relative
+        min-height: (300em/20)
+        .global-loading-anim
+            position: absolute
+            bottom: 0
+            width: 100%
+            height: (150em/20)
+    .global-loading-text
+        font-size: (24em/20)
+        color: #333
+        .hot
+            font-weight: bold
+            font-size: (28em/24)
+            padding: 0 (6em/24)
+
+.v-enter 
+    position: absolute
+    top: 0
+    animation: fadein .5s
+.v-leave
+    position: absolute
+    top: 0
+    animation: fadeout .5s
+
+@keyframes fadein
+    0%
+        +translateX(300px)
+    100% 
+        +translateX(0px)
+
+@keyframes fadeout
+    0%
+        +translateX(0px)
+    100% 
+        +translateX(-400px)
+
+
+.xm-input-number
+    display: inline-block
+    vertical-align: middle
+    border: 1px solid #eee
+    .input-sub, .input-add
+        display: inline-block
+        width: (60em/20)
+        height: (60em/20)
+        position: relative
+        vertical-align: middle
+        background-color: #fafafa
+        +transition(background-color 0.3s linear 0s)
+        &:after
+            content: '\0020'
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            width: (24em/20)
+            height: (4em/20)
+            margin: (-4em/20/2) 0 0 (-24em/20/2)
+            +border-radius((2em/20))
+            background-color: #ddd
+    .input-add
+        &:before
+            content: '\0020'
+            display: block
+            position: absolute
+            top: 50%
+            left: 50%
+            width: (4em/20)
+            height: (24em/20)
+            margin: (-24em/20/2) 0 0 (-4em/20/2)
+            +border-radius((2em/20))
+            background-color: #ddd
+    .input-num
+        vertical-align: middle
+        display: inline-block
+        min-width: (34em/20)
+        padding: 0 (12em/20)
+        height: (60em/20)
+        line-height: (60em/20)
+        text-align: center
+        span
+            font-size: (32em/20)
+            color: #51555a
+    .active
+        background-color: #f4f4f4
+        &:after, &:before
+            background-color: #999
+.xm-button
+    display: block
+    +border-radius((6em/20))
+    background-color: #ff6600
+    text-align: center
+    height: (80em/20)
+    line-height: (80em/20)
+    span
+        font-size: (32em/20)
+        color: #fff
+

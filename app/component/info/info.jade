@@ -1,0 +1,18 @@
+
+.global-loading(v-if="type == 'loading'")
+    .global-loading-logo
+        .global-loading-anim#globalLoadingAnim
+    .global-loading-text
+        span(v-show="!timeout") 正在努力为您加载中...
+        span(v-show="timeout")
+            | 网络不给力啊，已经过去{{waitTime}}秒钟
+            br
+            | 继续等待或
+            span.hot(class="retry", v-on="tap: refresh") 刷新
+            | 重试
+.global-error(v-if="type == 'error'")
+    .global-error-logo
+    .global-error-text
+        | 网络不给力，请点击
+        span(class="retry", v-on="tap: refresh") 刷新
+        | 重试

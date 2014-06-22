@@ -1,0 +1,100 @@
+- var page = {};
+- page.title = '首页';
+- page.keywords = '';
+- page.description = '';
+block option
+doctype
+html
+    head
+        script.
+            window.m_tsBase = new Date(), m_ts = {};
+        meta(charset="utf-8")
+        link(rel="dns-prefetch", href="//qdsang.com")
+        title #{page.title}
+        meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0")
+        //- UC浏览器全部模式
+        meta(name="full-screen", content="yes")
+        //- UC浏览器强制显示图片
+        meta(name="imagemode", content="force")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="apple-mobile-web-app-status-bar-style", content="black")
+        meta(name="format-detection", content="telephone=no")
+        meta(name="description", content="#{page.description}")
+        meta(name="keywords", content="#{page.keywords}")
+        link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
+        link(rel="apple-touch-icon-precomposed", href="/touch-icon.png")
+        script.
+            (function(){
+                var SUA = navigator.userAgent, SUA_OF = function(s){return SUA.indexOf(s) > -1};
+                if (SUA_OF('Android') && SUA_OF('Mobile') || SUA_OF('iPhone') || SUA_OF('iPod') || SUA_OF('Symbian') || SUA_OF('IEMobile')){
+                }else{
+                    //location.href = '';
+                }
+            })();
+            window.ErrTrace = function() {
+                var push = function(info) {
+                    window._hmt = window._hmt || [];
+                    console.log('error: ' + info);
+                    _hmt.push(['_trackEvent', 'test', 'test-error-'+info]);
+                },
+                onerror = function(msg, url, linenubmer) {
+                    var tmp = [];
+                    if (typeof msg == 'object') {
+                        for (var key in msg) {
+                            var val = msg[key];
+                            if (!msg.hasOwnProperty(key) || typeof val == 'function') {
+                                continue;
+                            }
+                            if (typeof val == 'object' && val.src) {
+                                tmp.push(key + '=' + val.src);
+                            } else {
+                                tmp.push(key + '=' + val);
+                            }
+                        }
+                    } else {
+                        tmp = [msg, url, linenubmer];
+                    }
+
+                    tmp.push(location.href);
+
+                    push(tmp.join(','));
+                };
+
+                window.onerror = onerror;
+                return {
+                    setLog: function(ex) {
+                        _arr.push([ex.message, ex.stack, location.href].join(','));
+                    },
+                    getLog: function() {
+                        return _arr;
+                    },
+                    triggerError: function(msg) {
+                        onerror(msg, 0, 0);
+                    }
+                }
+            }();
+            
+        link(rel="stylesheet", href="/static/css/base.sass?__inline")
+        block head
+    body
+        .global-loading#globalLoading
+            .global-loading-logo
+                .global-loading-anim#globalLoadingAnim
+            .global-loading-text 正在努力为您加载中...
+        script(src="/component_modules/_spin.js?__inline")
+        script.
+            var target = document.getElementById('globalLoadingAnim');
+            var spinner = new Spinner().spin(target);
+        #wrapper
+            .view(v-view="view", v-log)
+        #info
+        if DEBUG
+            script(src="/component_modules/mod/mod.js")
+        else
+            script(src="/component_modules/mod/mod-store.js")
+        script.
+            window.debug = #{DEBUG};
+            window.resourceMap = __MAP__;
+            require.resourceMap( resourceMap );
+            require.async(['lib/main.js'], function(){});
+        script(src="/static/js/ga.js?__inline")

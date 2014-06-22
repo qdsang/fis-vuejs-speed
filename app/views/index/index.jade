@@ -1,0 +1,12 @@
+
+div(v-component="c-header", v-with="header")
+
+//- 导航块
+.nav-index.card(v-if="nav")
+    ul(v-repeat="item : nav | group 2")
+        li(v-repeat="item")
+            a(href="{{link}}", data-log="B{{$index}}-{{link}}")
+                span.icon(class="icon-{{icon}}")
+                span.t: span {{name}}
+
+div(v-component="c-footer", v-with="footer")
