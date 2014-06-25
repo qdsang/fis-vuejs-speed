@@ -11,7 +11,7 @@ fis.config.merge({
     namespace : '',
     // 设置自动刷新页面工具端口号
     livereload : {
-         port : 8140
+         port : 81880
     },
 
     project : {
