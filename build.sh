@@ -48,7 +48,7 @@ case $DEPLOY in
         pro)
                 FIS_OPTION="--clean --optimize --pack --md5 --domains"
                 NODE_ENV="production"
-                DEST="../../m-mi-com"
+                DEST="../release"
         ;;
         debug-fis)
                 # 调试fis核心用
@@ -66,6 +66,7 @@ esac
 ROOTPATH=$(cd $ROOTPATH; pwd)
 cd $ROOTPATH
 echo $DEST
+mkdir -p $DEST
 DEST=$(cd $DEST; pwd)
 echo 
 echo "当前项目目录：${ROOTPATH}"
