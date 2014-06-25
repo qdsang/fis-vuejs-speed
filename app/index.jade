@@ -93,7 +93,7 @@ html
         else
             script(src="/component_modules/mod/mod-store.js")
         script.
-            window.debug = #{DEBUG};
+            window.debug = __DEBUG__;
             window.resourceMap = __MAP__;
             require.resourceMap( resourceMap );
             require.async(['lib/main.js'], function(){});
