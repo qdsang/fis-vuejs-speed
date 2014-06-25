@@ -8,7 +8,7 @@
 #cd `dirname $0`
 echo "   dev 开发模式（默认）"
 echo "   pro 生产模式"
-echo "eg: sudo sh build.sh dev"
+echo "eg: sh build.sh dev"
 
 DEPLOY=dev
 # 项目根目录
