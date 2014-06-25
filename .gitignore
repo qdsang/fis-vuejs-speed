@@ -1,11 +1,18 @@
+/.idea
 *.swp
 .DS_Store
+
+*.cmd
+*.db
+*.bak
+*.tmp
+*.temp
 
 node_modules
 npm-debug.log
 
-/temp
-/output
 
-*.temp
-*.tmp
+/temp
+
+/output
+/release
